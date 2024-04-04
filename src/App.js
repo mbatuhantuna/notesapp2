@@ -129,7 +129,7 @@ const App = () => {
     return [...notes].sort((a, b) => a.name.localeCompare(b.name));
   }
 
-  const sortedNotes = sortNotesByName([...state.notes]);
+  const sortedNotes = sortNotesByName(state.notes);
 
   function renderItem(item) {
     return (
@@ -171,7 +171,7 @@ const App = () => {
 
       <List
         loading={state.loading}
-        dataSource={state.notes}
+        dataSource={sortedNotes}
         renderItem={renderItem}
       />
 
